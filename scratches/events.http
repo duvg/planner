@@ -8,20 +8,21 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "id": 1,
-  "title": "title of event",
+  "id": 2,
+  "title": "New Event from SQLite",
   "image": "https://cdn.pixabay.com/photo/2017/04/25/22/28/despaired-2261021_1280.jpg",
-  "description": "description of new event to create",
+  "description": "this event is stored in SQLite",
   "tags": [
     "python",
     "fastapi",
-    "launch"
+    "launch",
+    "SQLite"
   ],
   "location": "Google Meet"
 }
 
 ### EVENT - Get single event
-GET http://localhost:8000/events/1
+GET http://localhost:8000/events/3
 Accept: application/json
 
 
@@ -33,3 +34,19 @@ Accept: application/json
 ### EVENT - Delete all events
 DELETE http://localhost:8000/events
 Accept: application/json
+
+
+
+### EVENT - Update single event
+PUT http://localhost:8000/events/edit/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "updated event",
+  "image": "no image",
+  "description": "The updated event description",
+  "tags": ["python", "fastapi"],
+  "location": "virtual"
+}
