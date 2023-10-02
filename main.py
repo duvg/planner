@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from database.connection import Settings
 from routes.users import user_router
@@ -9,6 +10,17 @@ import uvicorn
 app = FastAPI()
 
 settings = Settings()
+
+# register Origins
+origin = ["*"]
+
+app.add_middleware(
+  CORSMiddleware,
+  allow_origins=origins,
+  allow_credentials=True,
+  allow_methods=["*"],
+  allow_headers=["*"]
+)
 
 app.include_router(user_router, prefix="/users")
 app.include_router(event_router, prefix="/events")
