@@ -20,15 +20,15 @@ class User(Document):
       }
     }
 
-class UserSingIn(BaseModel):
-  email: EmailStr
-  password: str
+class TokenResponse(BaseModel):
+  access_token: str
+  token_type: str
 
   class Config:
     json_schema_extra = {
       "example": {
-        "email": "user@mail.com",
-        "password": "datapass",
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlcjFAbWFpbC5jb20iLCJleHBpcmVzIjoxNjk2MTE1NzAwLjMzNzg4MX0.eJyZzDExjS1R4GCOSu5J5JQWgc7yJnisAWoGWY9B3uU",
+        "token_type": "Bearer",
         "events": [],
       }
     }
