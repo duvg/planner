@@ -3,6 +3,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from typing import Optional, List, Any
 from pydantic import BaseSettings, BaseModel
 
+
 from models.user import User
 from models.event import Event;
 

@@ -13,5 +13,4 @@ async def authenticate(token: str = Depends(oauth2_scheme)) -> str:
     )
 
   decoded_token = verify_access_token(token)
-  print("dale", decoded_token)
   return decoded_token["user"]
