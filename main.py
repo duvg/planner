@@ -12,7 +12,7 @@ app = FastAPI()
 settings = Settings()
 
 # register Origins
-origin = ["*"]
+origins = ["*"]
 
 app.add_middleware(
   CORSMiddleware,
